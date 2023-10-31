@@ -12,5 +12,8 @@ class diarioController extends Controller
     public function metodoAlmacen(){
         return view('almacen');
     }
+    public function metodoEditar(){
+        return view('editar');
+    }
 
 }

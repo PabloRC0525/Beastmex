@@ -17,6 +17,7 @@ Route::controller(diarioController ::class)->group(function(){
 
 Route::get('/', 'metodoLogin')->name('apodoLogin');
 Route::get('/almacen', 'metodoAlmacen')->name('apodoAlmacen');
+Route::get('/editar', 'metodoEditar')->name('apodoEditar');
 
 }
 );

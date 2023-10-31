@@ -5,10 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h3 class="display-1 text-center text-danger mt-5">Registro de Productos</h3>
+                <h3 class="display-1 text-center text-danger mt-5">Editar Productos</h3>
                 <div class="card-body">
                 
                         @csrf
+                        <label for="nombre">{{ __('Id del producto:') }}</label>
+                        <input id="nombre" type="text" class="form-control" name="nombre" required>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Buscar Producto') }}
+                            </button>
+                        </div>
 
                         <label for="nombre">{{ __('Nombre del Producto') }}</label>
                         <input id="nombre" type="text" class="form-control" name="nombre" required>
@@ -34,13 +42,14 @@
                         <label for="foto">{{ __('Fotografía') }}</label>
                         <input id="foto" type="file" class="form-control" name="foto">
 
-                        <!-- Botón para registrar el producto -->
+                        
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Registrar Producto') }}
                             </button>
                         </div>
 
+                      
                     </form>
                 </div>
             </div>

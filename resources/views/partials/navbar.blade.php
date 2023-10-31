@@ -7,10 +7,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('apodoInicio')?'text-danger':''}}" aria-current="page" href="/">Inicio</a>
+            <a class="nav-link {{ request()->routeIs('apodoInicio')?'text-warning':''}}" aria-current="page" href="/">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('apodoAlmacen')?'text-danger':''}}" aria-current="page" href="/">Almacen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('apodoAEditar')?'text-success':''}}" aria-current="page" href="/">Editar</a>
           </li>
         </ul>
       </div>
