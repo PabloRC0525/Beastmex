@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\diarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::controller(diarioController ::class)->group(function(){
 
 Route::get('/', 'metodoLogin')->name('apodoLogin');
+Route::get('/almacen', 'metodoAlmacen')->name('apodoAlmacen');
+
+}
+);
 
