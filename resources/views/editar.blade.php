@@ -1,5 +1,4 @@
-@extends('layouts.plantilla')
-@include('partials.navbar')
+@extends('layouts.template')
 @section('contenido')
 <div class="container">
     <div class="row justify-content-center">

@@ -1,21 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Beastmex</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('apodoInicio')?'text-warning':''}}" aria-current="page" href="/">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('apodoAlmacen')?'text-danger':''}}" aria-current="page" href="/">Almacen</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('apodoAEditar')?'text-success':''}}" aria-current="page" href="/">Editar</a>
-          </li>
-        </ul>
-      </div>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-semibold" href="/">BEASTMEX</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+      
+      <ul class="navbar-nav">
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ALMACEN
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/Aregistro">Registro de productos</a></li>
+            <li><a class="dropdown-item" href="/Aconsultas">consulta de productos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            COMPRAS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Gestion de compras</a></li>
+            <li><a class="dropdown-item" href="#">consulta de productos</a></li>
+            <li><a class="dropdown-item" href="#">Ordenes de compra</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            VENTAS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">consulta de ventas</a></li>
+            <li><a class="dropdown-item" href="#">proceso de ventas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            GERENCIA
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Administracion de Usuarios</a></li>
+            <li><a class="dropdown-item" href="#">consulta de compras y ventas</a></li>
+            <li><a class="dropdown-item" href="#">Reportes y Graficas</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
