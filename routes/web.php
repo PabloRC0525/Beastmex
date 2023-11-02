@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\diarioController;
+use App\Http\Controllers\BeastmexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +13,14 @@ use App\Http\Controllers\diarioController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::controller(diarioController ::class)->group(function(){
 
-Route::get('/', 'metodoLogin')->name('apodoLogin');
+Route::controller(BeastmexController ::class)->group(function(){
 
-Route::get('/almacen', 'metodoAlmacen')->name('apodoAlmacen');
-Route::get('/editar', 'metodoEditar')->name('apodoEditar');
-
+    Route::get('/login', 'metodoLogin')->name('apodoLogin');
+    Route::get('/Aregistro', 'metodoAlmacen')->name('apodoARegistro');
+    Route::get('/editar', 'metodoEditar')->name('apodoEditar');
 }
 );
 
+Route::get('/',[BeastmexController::class, 'metodoInicio'])->name('apodoInicio');
+Route::get('/Aconsultas',[BeastmexController::class, 'metodoAconsultas'])->name('apodoAconsultas');

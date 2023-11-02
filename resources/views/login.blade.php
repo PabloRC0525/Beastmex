@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+{{-- @extends('layouts.') --}}
 
 @section('contenido')
 <div class="container">
