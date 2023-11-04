@@ -6,9 +6,8 @@
     <div class="card"  style="height: 500px; overflow-y: scroll;">
         <h3 class="display-1 text-center text-primary mt-5 fs-1 ">Registro de Productos</h3>
         <div class="card-body" >
-        
-                @csrf
-
+            <form action="">              
+                 @csrf
                 <label for="nombre">{{ __('Nombre del Producto') }}</label>
                 <input id="nombre" type="text" class="form-control" name="nombre" required>
 

@@ -24,4 +24,11 @@ class BeastmexController extends Controller
     public function metodoEditar(){
         return view('editar');
     }
+    public function metodoCgestion(){
+        return view('Cgestion');
+    }
+
+    public function metodoVconsulta(){
+        return view('Vconsulta');
+    }
 }

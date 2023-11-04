@@ -24,3 +24,5 @@ Route::controller(BeastmexController ::class)->group(function(){
 
 Route::get('/',[BeastmexController::class, 'metodoInicio'])->name('apodoInicio');
 Route::get('/Aconsultas',[BeastmexController::class, 'metodoAconsultas'])->name('apodoAconsultas');
+Route::get('/Cgestion',[BeastmexController::class, 'metodoCgestion'])->name('apodoCgestion');
+Route::get('/Vconsulta',[BeastmexController::class, 'metodoVconsulta'])->name('apodoVconsulta');

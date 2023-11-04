@@ -24,7 +24,7 @@
             COMPRAS
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Gestion de compras</a></li>
+            <li><a class="dropdown-item" href="/Cgestion">Gestion de compras</a></li>
             <li><a class="dropdown-item" href="#">consulta de productos</a></li>
             <li><a class="dropdown-item" href="#">Ordenes de compra</a></li>
           </ul>
@@ -34,7 +34,7 @@
             VENTAS
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">consulta de ventas</a></li>
+            <li><a class="dropdown-item" href="/Vconsulta">consulta de ventas</a></li>
             <li><a class="dropdown-item" href="#">proceso de ventas</a></li>
           </ul>
         </li>
