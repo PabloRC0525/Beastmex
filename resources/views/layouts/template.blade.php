@@ -10,6 +10,7 @@
     <title>@yield('titulo')</title>
     @vite('resources/js/app.js')
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
     /* Estilos para la barra de navegación */
 .navbar {
@@ -37,10 +38,23 @@
     
 }
 
+.stock-indicator {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .in-stock {
+      background-color: green;
+    }
+    .out-of-stock {
+      background-color: red;
+    }
 </style>
 
 </head>
-<body>
+<body style="padding-bottom: 40px; margin-bottom: 40px;">
    
 
     @include('partials.navbar')
