@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'metodoLogin')->name('apodoLogin');
+Route::get('/productos', 'mertodoProducto')->name('apodoProductos');
+
 
