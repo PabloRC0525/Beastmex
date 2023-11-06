@@ -11,6 +11,8 @@
         <!-- Cuadro de búsqueda -->
         <div class="mb-3 col-md-4">
             <input type="text" class="form-control" id="searchInput" placeholder="Buscar por nombre o número de serie">
+            
+            <div class="mt-3"><button class="btn btn-primary" id="consultarBtn">Consultar</button></div>
         </div>
 
         <!-- Tabla de productos -->
