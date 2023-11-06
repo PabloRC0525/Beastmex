@@ -26,3 +26,11 @@ Route::get('/',[BeastmexController::class, 'metodoInicio'])->name('apodoInicio')
 Route::get('/Aconsultas',[BeastmexController::class, 'metodoAconsultas'])->name('apodoAconsultas');
 Route::get('/Cgestion',[BeastmexController::class, 'metodoCgestion'])->name('apodoCgestion');
 Route::get('/Vconsulta',[BeastmexController::class, 'metodoVconsulta'])->name('apodoVconsulta');
+
+/*gerencias */
+Route::get('/Gusuarios', [BeastmexController::class, 'metodoGusuario'])->name('gusuarios');
+Route::post('/guardarusuario', [BeastmexController::class, 'guardarusuario'])->name('guardarusuario');
+
+/*gerencias ventas,compras y ganancias*/
+Route::get('/Vgerencia', [BeastmexController::class, 'metodoVgerencia'])->name('vgerencia');
+Route::get('/Ganancias', [BeastmexController::class, 'metodoGanancias'])->name('ganancias');
