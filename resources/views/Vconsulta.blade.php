@@ -8,6 +8,8 @@
     <div class="mb-3 col-md-4">
       <h2>Buscar Productos</h2>
       <input type="text" class="form-control" id="searchInput" placeholder="Buscar por nombre o marca">
+
+    <div class="mt-3"><button class="btn btn-primary" id="consultarBtn">Consultar</button></div>
     </div>
 
     <h2>Tabla de Productos</h2>

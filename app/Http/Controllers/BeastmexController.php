@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\GusuarioRequest;
 
+use App\Http\Requests\ValidadorResgistroC; 
+
+use RealRashid\SweetAlert\Facades\Alert;
+
+
+
 class BeastmexController extends Controller
 {
     public function metodoInicio(){
@@ -32,6 +38,7 @@ class BeastmexController extends Controller
     public function metodoVconsulta(){
         return view('Vconsulta');
     }
+
     public function metodoGusuario(){
         return view('Gusuarios');
     }
@@ -61,5 +68,31 @@ class BeastmexController extends Controller
 
 }
 
+
+
+=======
+  
+  public function metodoPventas(){
+        return view('ProcesoVentas');
+    }
+  
+    public function metodoGraficas(){
+        return view('Graficas');
+    }
+  
+    public function metodoAgregarP(ValidadorResgistroC $req){
+
+
+        // Guarda el mensaje en una variable de sesión
+        session()->flash('confirmacion', 'Todo correcto: Producto ' . $req->input('txtNombre') . ' Agregado');
+
+        // Muestra el mensaje usando SweetAlert
+        Alert::success('Confirmación', session('confirmacion'));
+
+        // Redirige a la página de registro
+        return redirect('/Cgestion');
+    }
+        
+}
 
 
