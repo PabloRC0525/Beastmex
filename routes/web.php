@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// rutas de myriam
 Route::get('/', 'metodoLogin')->name('apodoLogin');
 Route::get('/compras', [CompraController::class, 'index'])->name('apodocompras');
 Route::get('/consultacompras', [CompraController::class, 'index'])->name('consultacompras');
