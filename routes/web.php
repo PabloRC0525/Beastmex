@@ -26,6 +26,7 @@ Route::get('/',[BeastmexController::class, 'metodoInicio'])->name('apodoInicio')
 Route::get('/Aconsultas',[BeastmexController::class, 'metodoAconsultas'])->name('apodoAconsultas');
 Route::get('/Cgestion',[BeastmexController::class, 'metodoCgestion'])->name('apodoCgestion');
 Route::get('/Vconsulta',[BeastmexController::class, 'metodoVconsulta'])->name('apodoVconsulta');
+
 Route::get('/compras', [BeastmexController::class, 'index'])->name('apodocompras');
 Route::get('/consultacompras', [BeastmexController::class, 'index'])->name('consultacompras');
 Route::post('/consultacompras', [BeastmexController::class, 'buscar'])->name('buscar-compras');
@@ -33,3 +34,5 @@ Route::get('/ordenes-compra', [BeastmexController::class, 'formulario'])->name('
 Route::post('/ordenes-compra/guardar', [BeastmexController::class, 'guardar'])->name('guardar-orden');
 Route::get('/historial-ordenes', [BeastmexController::class, 'buscar'])->name('buscar-ordenes');
 Route::get('/descargar-orden/{id}', [BeastmexController::class, 'descargar'])->name('descargar-orden');
+
+Route::post('/AgregarProducto',[BeastmexController::class, 'metodoAgregarP']) ->name('AgregarP');
