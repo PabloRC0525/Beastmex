@@ -37,7 +37,15 @@ class BeastmexController extends Controller
     public function metodoVconsulta(){
         return view('Vconsulta');
     }
-
+  
+  public function metodoPventas(){
+        return view('ProcesoVentas');
+    }
+  
+    public function metodoGraficas(){
+        return view('Graficas');
+    }
+  
     public function metodoAgregarP(ValidadorResgistroC $req){
 
 
@@ -49,7 +57,7 @@ class BeastmexController extends Controller
 
         // Redirige a la página de registro
         return redirect('/Cgestion');
-        
     }
+        
 }
 
