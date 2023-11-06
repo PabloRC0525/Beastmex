@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('titulo', 'Graficas')
 @section('contenido')
 <h1>Reportes y Gráficas</h1>
 

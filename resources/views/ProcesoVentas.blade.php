@@ -1,4 +1,6 @@
 @extends('layouts.template')
+@section('titulo', 'Proceso Ventas')
+
 @section('contenido')
     <h1>Sistema de Ventas</h1>
 
