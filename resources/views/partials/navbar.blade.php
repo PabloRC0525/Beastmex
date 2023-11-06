@@ -26,7 +26,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/Cgestion">Gestion de compras</a></li>
             <li><a class="dropdown-item" href="/Cconsulta">consulta de productos</a></li>
-            <li><a class="dropdown-item" href="#">Ordenes de compra</a></li>
+            <li><a class="dropdown-item" href="/ordenes">Ordenes de compra</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -46,7 +46,7 @@
 
             <li><a class="dropdown-item" href="/Gusuarios">Administracion de Usuarios</a></li>
             <li><a class="dropdown-item" href="/Vgerencia">consulta de compras y ventas</a></li>
-            <li><a class="dropdown-item" href="/Ganancias">Reportes y Graficas</a></li>
+            <li><a class="dropdown-item" href="/Graficas">Reportes y Graficas</a></li>
 
           </ul>
         </li>

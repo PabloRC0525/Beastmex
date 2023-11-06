@@ -1,9 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layouts.template')
+@section('contenido')
     <h1>Historial de Órdenes de Compra</h1>
 
-    <form action="{{ route('buscar-ordenes') }}" method="GET">
+    <form>
         <div class="form-group">
             <label for="buscar">Buscar por fecha:</label>
             <input type="date" name="buscar" class="form-control">
@@ -20,15 +19,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($ordenesCompra as $orden)
+         
                 <tr>
-                    <td>{{ $orden->numero_orden }}</td>
-                    <td>{{ $orden->fecha_compra }}</td>
+                    <td>1</td>
+                    <td>06/11</td>
                     <td>
-                        <a href="{{ route('descargar-orden', $orden->id) }}" class="btn btn-success">Descargar</a>
+                        <a  class="btn btn-success">Descargar</a>
                         </td>
                 </tr>
-            @endforeach
+           
         </tbody>
     </table>
 </div>

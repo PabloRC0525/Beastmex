@@ -69,8 +69,15 @@ class BeastmexController extends Controller
         return view('ProcesoVentas');
     }
   
-    public function metodoGraficas(){
+    public function Graficas(){
         return view('Graficas');
+    }
+
+    public function metodoConsulta(){
+        return view('consultacompras');
+    }
+    public function metodoOrden(){
+        return view('ordeneshistorial');
     }
   
     public function metodoAgregarP(ValidadorResgistroC $req){
