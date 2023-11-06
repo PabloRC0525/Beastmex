@@ -35,7 +35,7 @@ Route::post('/guardarusuario', [BeastmexController::class, 'guardarusuario'])->n
 /*gerencias ventas,compras y ganancias*/
 Route::get('/Vgerencia', [BeastmexController::class, 'metodoVgerencia'])->name('vgerencia');
 Route::get('/Ganancias', [BeastmexController::class, 'metodoGanancias'])->name('ganancias');
-=======
+
 Route::get('/compras', [BeastmexController::class, 'index'])->name('apodocompras');
 Route::get('/consultacompras', [BeastmexController::class, 'index'])->name('consultacompras');
 Route::post('/consultacompras', [BeastmexController::class, 'buscar'])->name('buscar-compras');

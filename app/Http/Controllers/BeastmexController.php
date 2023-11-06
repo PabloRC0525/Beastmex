@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\GusuarioRequest;
 
+
 use App\Http\Requests\ValidadorResgistroC; 
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -49,9 +50,6 @@ class BeastmexController extends Controller
         return view('Ganancias');
     }
 
-
-     
-
     public function guardarusuario(GusuarioRequest $req)
     {
         $validator = Validator::make($req->all(), $req->rules());
@@ -63,16 +61,11 @@ class BeastmexController extends Controller
         $usu = $req->input('nombre');
 
         return redirect("/Gusuarios")->with("confirmacion", "¡El usuario $usu se ha registrado correctamente!");
-}
+    }
 
 
-}
-
-
-
-=======
   
-  public function metodoPventas(){
+    public function metodoPventas(){
         return view('ProcesoVentas');
     }
   
