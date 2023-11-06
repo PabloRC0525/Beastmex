@@ -25,7 +25,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/Cgestion">Gestion de compras</a></li>
-            <li><a class="dropdown-item" href="#">consulta de productos</a></li>
+            <li><a class="dropdown-item" href="/Cconsulta">consulta de productos</a></li>
             <li><a class="dropdown-item" href="#">Ordenes de compra</a></li>
           </ul>
         </li>

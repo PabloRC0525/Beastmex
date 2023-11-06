@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
-@section('content')
+@section('contenido')
     <h1>Consulta de Compras</h1>
 
-    <form action="{{ route('consultacompras') }}" method="GET">
+    <form action="{{ route('Ccompras') }}" method="GET">
         <input type="text" name="search" placeholder="Buscar por nombre">
         <button type="submit">Buscar</button>
     </form>
@@ -15,15 +15,21 @@
                 <th>Precio</th>
                 <th>Existencia</th>
             </tr>
+        
         </thead>
         <tbody>
-            @foreach($productos as $producto)
+           
                 <tr>
-                    <td>{{ $producto->nombre }}</td>
-                    <td>{{ $producto->precio }}</td>
-                    <td @if($producto->existencia < 2) class="alert-danger" @endif>{{ $producto->existencia }}</td>
-                    </tr>
-            @endforeach
+                    <td>Producto 1 </td>
+                    <td>100 </td>
+                    <td>  2 </td>
+                </tr>
+                <tr>
+                    <td>Producto 2 </td>
+                    <td>400 </td>
+                    <td>  7 </td>
+                </tr>
+       
         </tbody>
     </table>
 </div>

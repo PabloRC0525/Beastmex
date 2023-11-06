@@ -37,4 +37,7 @@ class BeastmexController extends Controller
     public function metodoGraficas(){
         return view('Graficas');
     }
+    public function metodoConsulta(){
+        return view('consultacompras');
+    }
 }
