@@ -18,6 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'metodoLogin')->name('apodoLogin');
-Route::get('/productos', 'mertodoProducto')->name('apodoProductos');
+Route::get('/compras', [CompraController::class, 'index'])->name('apodocompras');
+Route::get('/consultacompras', [CompraController::class, 'index'])->name('consultacompras');
+Route::post('/consultacompras', [CompraController::class, 'buscar'])->name('buscar-compras');
+Route::get('/ordenes-compra', [OrdenCompraController::class, 'formulario'])->name('ordenes-compra');
+Route::post('/ordenes-compra/guardar', [OrdenCompraController::class, 'guardar'])->name('guardar-orden');
+Route::get('/historial-ordenes', [OrdenCompraController::class, 'buscar'])->name('buscar-ordenes');
+Route::get('/descargar-orden/{id}', [OrdenCompraController::class, 'descargar'])->name('descargar-orden');
+
+
+
 
 
