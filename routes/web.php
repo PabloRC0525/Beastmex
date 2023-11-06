@@ -26,8 +26,22 @@ Route::get('/',[BeastmexController::class, 'metodoInicio'])->name('apodoInicio')
 Route::get('/Aconsultas',[BeastmexController::class, 'metodoAconsultas'])->name('apodoAconsultas');
 Route::get('/Cgestion',[BeastmexController::class, 'metodoCgestion'])->name('apodoCgestion');
 Route::get('/Vconsulta',[BeastmexController::class, 'metodoVconsulta'])->name('apodoVconsulta');
+
 Route::get('/Pventas',[BeastmexController::class, 'metodoPventas'])->name('apodoPventas');
 Route::get('/Graficas',[BeastmexController::class, 'Graficas'])->name('Graficas  ');
+
+
+
+/*gerencias */
+Route::get('/Gusuarios', [BeastmexController::class, 'metodoGusuario'])->name('gusuarios');
+Route::post('/guardarusuario', [BeastmexController::class, 'guardarusuario'])->name('guardarusuario');
+
+/*gerencias ventas,compras y ganancias*/
+Route::get('/Cgestion', [BeastmexController::class, 'Cgestion'])->name('Cgestion');
+Route::get('/Vgerencia', [BeastmexController::class, 'Vgerencia'])->name('Vgerencia');
+Route::get('/Vconsulta', [BeastmexController::class, 'Vconsulta'])->name('Vconsulta');
+
+
 Route::get('/compras', [BeastmexController::class, 'index'])->name('apodocompras');
 Route::get('/Cconsulta',[BeastmexController::class, 'metodoConsulta'])->name('Ccompras');
 Route::post('/consultacompras', [BeastmexController::class, 'buscar'])->name('buscar-compras');

@@ -46,8 +46,8 @@ class BeastmexController extends Controller
     public function metodoVgerencia(){
         return view('Vgerencia');
     }
-    public function metodoGanancias(){
-        return view('Ganancias');
+    public function Vconsulta(){
+        return view('Vconsulta');
     }
 
     public function guardarusuario(GusuarioRequest $req)
@@ -79,6 +79,18 @@ class BeastmexController extends Controller
     public function metodoOrden(){
         return view('ordeneshistorial');
     }
+
+  
+    public function Cgestion(){
+        return view('Cgestion');
+    }
+
+    public function Vgerencia(){
+        return view('Vgerencia');
+    }
+  
+   
+
   
     public function metodoAgregarP(ValidadorResgistroC $req){
 
