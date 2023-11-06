@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\GusuarioRequest;
 
 use App\Http\Requests\ValidadorResgistroC; 
 
@@ -37,6 +38,39 @@ class BeastmexController extends Controller
     public function metodoVconsulta(){
         return view('Vconsulta');
     }
+
+    public function metodoGusuario(){
+        return view('Gusuarios');
+    }
+    public function metodoVgerencia(){
+        return view('Vgerencia');
+    }
+    public function metodoGanancias(){
+        return view('Ganancias');
+    }
+
+
+     
+
+    public function guardarusuario(GusuarioRequest $req)
+    {
+        $validator = Validator::make($req->all(), $req->rules());
+
+        if ($validator->fails()) {
+            return redirect("/Gusuarios")->withErrors($validator)->withInput();
+        }
+
+        $usu = $req->input('nombre');
+
+        return redirect("/Gusuarios")->with("confirmacion", "¡El usuario $usu se ha registrado correctamente!");
+}
+
+
+}
+
+
+
+=======
   
   public function metodoPventas(){
         return view('ProcesoVentas');
@@ -60,4 +94,5 @@ class BeastmexController extends Controller
     }
         
 }
+
 

@@ -43,9 +43,15 @@
             GERENCIA
           </a>
           <ul class="dropdown-menu">
+
+            <li><a class="dropdown-item" href="/Gusuarios">Administracion de Usuarios</a></li>
+            <li><a class="dropdown-item" href="/Vgerencia">consulta de compras y ventas</a></li>
+            <li><a class="dropdown-item" href="/Ganancias">Reportes y Graficas</a></li>
+=======
             <li><a class="dropdown-item" href="#">Administracion de Usuarios</a></li>
             <li><a class="dropdown-item" href="#">consulta de compras y ventas</a></li>
             <li><a class="dropdown-item" href="/Graficas">Reportes y Graficas</a></li>
+
           </ul>
         </li>
       </ul>
