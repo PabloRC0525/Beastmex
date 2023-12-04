@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
 
+
 class CompraController extends Controller
 {
     public function index()
     {
+
         $consulcompras = DB::table('compras')->get();
         return view('comprasindex', compact('consulcompras'));
+        return view('comprasindex');
     }
 
     public function consultacompras(Request $request)
@@ -38,10 +41,10 @@ class CompraController extends Controller
     return view('vista_consulta', ['compras' => $compras, 'nombreProducto' => $nombreProducto]);
     }
 
-    public function update($request, string $id)
+    public function update($request, string $nombreProducto)
     {
 
-    DB::table('create_compras')->where('nombre', $id)->update([
+    DB::table('create_compras')->where('nombre', $nombreProducto)->update([
         "nombre"=> $request->input('txtNombre'),
         "precio"=> $request->input('txtPrecio'),
         "existencia"=> $request->input('txtExistencia'),
@@ -49,6 +52,7 @@ class CompraController extends Controller
     ]);
     return redirect('/compras')->with('confirmacion', 'tu producto se a actualizado');
     }
+
 
 
     public function store(Request $request)
@@ -73,4 +77,5 @@ class CompraController extends Controller
     }
 
 }
+
 

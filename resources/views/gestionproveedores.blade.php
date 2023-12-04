@@ -9,36 +9,34 @@
             <h2 class="text-center mb-4">Tabla de Proveedores</h2>
             <table class="table">
                 <thead>
-                    <th>Nombre</th>
-                    <th>Correo Electrónico</th>
-                    <th>Teléfono</th>
-                    <th>Acciones</th>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    @foreach ($consulProveedor as $proveedor)
+                    <!-- Ejemplo de proveedor -->
                     <tr>
-                        <td>{{ $proveedor->nombrepro }}</td>
-                        <td>{{ $proveedor->correo }}</td>
-                        <td>{{ $proveedor->telefono }}</td>
+                        <td>Proveedor1</td>
+                        <td>proveedor1@example.com</td>
+                        <td>123-456-7890</td>
                         <td>
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editar{{ $proveedor->id }}">
-                                Editar
-                            </button>
-                            <button href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarProveedor{{ $proveedor->id }}">
-                                Eliminar
-                            </button>
+                            <button class="btn btn-warning btn-editar">Editar</button>
+                            <button class="btn btn-danger btn-eliminar">Eliminar</button>
                         </td>
                     </tr>
-                    @include('partials.modal')
-                    @endforeach
+                    <!-- Fin del ejemplo -->
                 </tbody>
             </table>
-            <div class="text-center">
-                <button class="btn btn-success btn-agregar">Agregar Proveedor</button>
-            </div>
+        </div>
+    </div>
+
+    <div class="row content-mt-3">
+        <div class="col-md-4">
+            <button class="btn btn-success btn-block btn-agregar">Agregar Proveedor</button>
         </div>
     </div>
 </div>
-    
-
 @endsection

@@ -3,6 +3,7 @@
 @section('titulo', 'Gestión')
 
 @section('contenido')
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6 mb-4">
@@ -49,3 +50,16 @@
     </div>
 </div>
 @endsection
+
+  <script>
+    // Muestra SweetAlert cuando el mensaje de confirmación está presente en la sesión
+    @if(session('confirmacion'))
+        Swal.fire({
+            title: '¡Éxito!',
+            text: '{{ session('confirmacion') }}',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+    @endif
+  </script>
+@endsection 
