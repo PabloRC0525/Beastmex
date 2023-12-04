@@ -40,9 +40,7 @@ class BeastmexController extends Controller
         return view('Vconsulta');
     }
 
-    public function metodoGusuario(){
-        return view('Gusuarios');
-    }
+    
     public function metodoVgerencia(){
         return view('Vgerencia');
     }
@@ -50,18 +48,7 @@ class BeastmexController extends Controller
         return view('Ganancias');
     }
 
-    public function guardarusuario(GusuarioRequest $req)
-    {
-        $validator = Validator::make($req->all(), $req->rules());
-
-        if ($validator->fails()) {
-            return redirect("/Gusuarios")->withErrors($validator)->withInput();
-        }
-
-        $usu = $req->input('nombre');
-
-        return redirect("/Gusuarios")->with("confirmacion", "¡El usuario $usu se ha registrado correctamente!");
-    }
+    
 
 
   

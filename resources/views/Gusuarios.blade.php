@@ -2,30 +2,36 @@
 @section('contenido')
 <div class="container col-md-5 mt-4">
     <button onclick="mostrarSeccion('registro')"class="btn btn-primary">Registrar Usuario</button>
-    <button onclick="mostrarSeccion('existente')"class="btn btn-primary">Ver Usuarios Existentes</button>
+    <button onclick="mostrarSeccion('existente')"class="btn btn-primary">Usuarios Existentes</button>
     <div id="seccion-registro" style="display: block;">
         
             <h3 class="display-1 text-center text-primary mt-5 fs-1">Registro de Usuarios</h3>
+            @if (session()->has('confirmacion'))
+  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+  <strong> {{session('confirmacion') }} </strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+  @endif
             <div class="card-body">
-                <form method="POST" action="{{ route('guardarusuario') }}">
+                <form method="POST" action="/Gusuarios">
                     @csrf
                     <label for="nombre">{{ __('Nombre(s)') }}</label>
-                    <input id="nombre" type="text" class="form-control" name="nombre" required>
+                    <input id="nombre" type="text" class="form-control" name="txtnombre" required>
 
                     <label for="apellido_paterno">{{ __('Apellido paterno') }}</label>
-                    <input id="apellido_paterno" type="text" class="form-control" name="AP" required>
+                    <input id="apellido_paterno" type="text" class="form-control" name="txtAP" required>
 
                     <label for="apellido_materno">{{ __('Apellido materno') }}</label>
-                    <input id="apellido_materno" type="text" class="form-control" name="AM" required>
+                    <input id="apellido_materno" type="text" class="form-control" name="txtAM" required>
 
                     <label for="correo">{{ __('Correo Electrónico') }}</label>
-                    <input id="correo" type="email" class="form-control" name="correo" required>
+                    <input id="correo" type="email" class="form-control" name="txtcorreo" required>
 
                     <label for="puesto">{{ __('Puesto') }}</label>
-                    <input id="puesto" type="text" class="form-control" name="puesto" required>
+                    <input id="puesto" type="text" class="form-control" name="txtpuesto" required>
 
                     <label for="password">{{ __('Contraseña') }}</label>
-                    <input id="password" type="password" class="form-control" name="password" required>
+                    <input id="password" type="password" class="form-control" name="txtcontraseña" required>
 
                     
                     <div class="form-group">
@@ -46,6 +52,7 @@
             </div>
         
             <!-- Tabla de usuarios -->
+@foreach ($Usuarios as $Usuario)
             <table class="table">
                 <thead>
                     <tr>
@@ -59,12 +66,11 @@
                 </thead>
                 <tbody id="userTableBody">
                     <tr>
-                        <td>ALAN</td>
-                        <td>GUZMAN</td>
-                        <td>AYALA</td>
-                        <td>ALAN@example.com</td>
-                        <td>JEFE</td>
-                        <td>
+                        <td>{{ $Usuario->nombre}}</td>
+                        <td>{{ $Usuario->AP}}</td>
+                        <td>{{ $Usuario->AM}}</td>
+                        <td>{{ $Usuario->correo}}</td>
+                        <td>{{ $Usuario->puesto}}</td>
                             <a href="#" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                             <a href="#" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
                             
@@ -73,6 +79,7 @@
                     
                 </tbody>
             </table>
+@endforeach
         </div>
     </div>
 </div>

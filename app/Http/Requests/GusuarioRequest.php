@@ -28,7 +28,7 @@ class GusuarioRequest extends FormRequest
             'AM' => 'required|string|max:255',
             'correo' => 'required|email|unique:usuarios',
             'puesto' => 'required|string|max:255',
-            'password' => 'required|string|min:8',
+            'contraseña' => 'required|string|min:8',
         ];
     }
 }

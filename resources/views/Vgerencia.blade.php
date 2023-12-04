@@ -1,77 +1,72 @@
+
+
 @extends('layouts.template')
 
-@section('titulo', 'Consulta')
+@section('titulo', 'Gestión de Ventas y Compras')
 
 @section('contenido')
 <div class="container mt-5">
     <div class="mb-3 col-md-4">
-      <button onclick="mostrarSeccion('ventas')" class="btn btn-primary">Ventas</button>
-      <button onclick="mostrarSeccion('compras')" class="btn btn-secondary">Compras</button>
-      <input type="text" class="form-control" id="searchInput" placeholder="Buscar por nombre o marca">
+        <button onclick="mostrarSeccion('ventas')" class="btn btn-primary">Ventas</button>
+        <button onclick="mostrarSeccion('compras')" class="btn btn-primary">Compras</button>
+        
     </div>
 
-    <div id="seccion-ventas" style="display: block;">
-        <h2>Tabla de Ventas</h2>
-        <table class="table">
-            <thead>
+    <div id="seccion-ventas" style="display: none;">
+    <h2>Tabla de Ventas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($ventas as $venta)
                 <tr>
-                    <th>Nombre</th>
-                    <th>Marca</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Producto Venta 1</td>
-                    <td>Marca Venta A</td>
-                    <td>$20.00</td>
+                    <td>{{ $venta->nombre }}</td>
+                    <td>{{ $venta->precio }}</td>
                     <td>
-                        <span class="stock-indicator in-stock"></span>En Stock
+                        @if ($venta->existencia == 1)
+                            <span class="stock-indicator in-stock"></span>En Stock
+                        @else
+                            <span class="stock-indicator out-of-stock"></span>Sin Stock
+                        @endif
                     </td>
                 </tr>
-                <tr>
-                    <td>Producto Venta 2</td>
-                    <td>Marca Venta B</td>
-                    <td>$25.50</td>
-                    <td>
-                        <span class="stock-indicator out-of-stock"></span>Sin Stock
-                    </td>
-                </tr>
-                <!-- Agrega más filas de productos de ventas aquí -->
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
     <div id="seccion-compras" style="display: none;">
         <h2>Tabla de Compras</h2>
+        
         <table class="table">
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Marca</th>
                     <th>Precio</th>
-                    <th>Stock</th>
+                    <th>Existencia</th>
+                    <!-- Agrega otros encabezados según sea necesario -->
                 </tr>
             </thead>
             <tbody>
+            @foreach($compras as $compra)
                 <tr>
-                    <td>Producto Compra 1</td>
-                    <td>Marca Compra A</td>
-                    <td>$30.00</td>
+                    <td>{{ $compra->nombre }}</td>
+                    <td>${{ $compra->precio }}</td>
                     <td>
-                        <span class="stock-indicator in-stock"></span>En Stock
+                    @if ($compra->existencia == 1)
+                            <span class="stock-indicator in-stock"></span>En Stock
+                        @elseif ($compra->existencia == 0)
+                            <span class="stock-indicator out-of-stock"></span>Sin Stock
+                        @endif
                     </td>
+                    <!-- Agrega otras columnas según sea necesario -->
                 </tr>
-                <tr>
-                    <td>Producto Compra 2</td>
-                    <td>Marca Compra B</td>
-                    <td>$35.50</td>
-                    <td>
-                        <span class="stock-indicator out-of-stock"></span>Sin Stock
-                    </td>
-                </tr>
-                <!-- Agrega más filas de productos de compras aquí -->
+            @endforeach
             </tbody>
         </table>
     </div>

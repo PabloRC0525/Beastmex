@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            <h2>Ventas Mensuales</h2>
+            <h2>Ganancias Mensuales</h2>
             <canvas id="ventasChart" style="height: 400px;"></canvas>
         </div>
         <div class="col-md-6">
@@ -23,22 +23,25 @@
             <thead>
                 <tr>
                     <th>Producto</th>
-                    <th>Ganancia</th>
+                    <th>Cantidad Vendida</th>
+                    <th>Ganancia Total</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Producto A</td>
-                    <td>$5000</td>
-                </tr>
-                <tr>
-                    <td>Producto B</td>
-                    <td>$3000</td>
-                </tr>
-                
+                @foreach($productos as $producto)
+                    <tr>
+                        <td>{{ $producto->nombre }}</td>
+                        <td>{{ $producto->cantidad }}</td>
+                        <td>${{ number_format($gananciasTotales, 2) }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
+ 
+    <p></p>
+</div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -48,14 +51,16 @@
     var ventasChart = new Chart(ctx1, {
         type: 'bar',
         data: {
-            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-            datasets: [{
-                label: 'Ventas',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
+            labels: @json($labels), // Reemplaza con tus etiquetas de meses
+            datasets: [
+                {
+                    label: 'Ventas',
+                    data: @json($ventasMensuales), // Reemplaza con tus datos de ventas mensuales
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
         },
         options: {
             scales: {
@@ -71,14 +76,16 @@
     var gananciasChart = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: ['2020', '2021', '2022', '2023'],
-            datasets: [{
-                label: 'Ganancias',
-                data: [20000, 30000, 40000, 45000],
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
+            labels: @json($labelsGananciasAnuales), // Reemplaza con tus etiquetas de años
+            datasets: [
+                {
+                    label: 'Ganancias',
+                    data: @json($gananciasAnuales), // Reemplaza con tus datos de ganancias anuales
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
         },
         options: {
             scales: {

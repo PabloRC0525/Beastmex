@@ -44,7 +44,7 @@
           </a>
           <ul class="dropdown-menu">
 
-            <li><a class="dropdown-item" href="/Gusuarios">Administracion de Usuarios</a></li>
+            <li><a class="dropdown-item {{ request()->routeIs('Gusuarios.create')?'':''}}" href="{{route('Gusuarios.create')}}">Administracion de usuarios</a></li>
             <li><a class="dropdown-item" href="/Vgerencia">consulta de compras y ventas</a></li>
             <li><a class="dropdown-item" href="/Ganancias">Reportes y Graficas</a></li>
 
